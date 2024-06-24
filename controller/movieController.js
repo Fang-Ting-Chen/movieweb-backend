@@ -117,6 +117,9 @@ exports.callback = async (req, res) => {
     req.session.sessionId = sessionId;
     req.session.accountId = accountId;   
 
+    console.log('callback_Session ID:', req.session.sessionId);
+    console.log('callback_Session Account ID:', req.session.accountId);
+
     res.redirect('https://fang-ting-chen.github.io/movieweb-frontend/');  
   } catch (error) {
     res.status(500).send('Error creating session');
@@ -131,8 +134,8 @@ exports.logout = async(req, res) =>{
 
 // 用於前端檢查用户是否已登入
 exports.checkLogin = async (req, res) =>{
-  console.log('Session ID:', req.session.sessionId);
-  console.log('Session account:', req.session.accountId);
+  console.log('checkLogin_Session ID:', req.session.sessionId);
+  console.log('checkLogin_Session account:', req.session.accountId);
   if (req.session.sessionId && req.session.accountId) {
     res.json({ loggedIn: true });
   } else {
