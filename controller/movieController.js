@@ -117,7 +117,7 @@ exports.callback = async (req, res) => {
     req.session.sessionId = sessionId;
     req.session.accountId = accountId;   
 
-    res.redirect('https://fang-ting-chen.github.io/movieweb-frontend/watchlist');  
+    res.redirect('https://fang-ting-chen.github.io/movieweb-frontend/');  
   } catch (error) {
     res.status(500).send('Error creating session');
   }
