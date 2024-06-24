@@ -24,7 +24,7 @@ var app = express();
 //設置 cors
 app.use(
   cors({
-    origin: 'http://localhost:5173',
+    origin: 'https://fang-ting-chen.github.io',
     methods: 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
     allowedHeaders: ['X-Requested-With', 'X-HTTP-Method-Override', 'Content-Type', 'Accept'],
     credentials: true,
