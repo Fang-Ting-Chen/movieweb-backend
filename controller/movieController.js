@@ -100,7 +100,7 @@ exports.deleteWatchListController = async (req, res) => {
 exports.login = async (req, res) => {
   try {
     const requestToken = await createToken(); 
-    const redirectUrl = `https://www.themoviedb.org/authenticate/${requestToken}?redirect_to=http://localhost:3000/movie/callback`; //此url部屬後要改!!!!! 
+    const redirectUrl = `https://www.themoviedb.org/authenticate/${requestToken}?redirect_to=https://movieweb-backend-bj2o.onrender.com/movie/callback`; //此url部屬後要改!!!!! 
     res.json({ redirectUrl });
   } catch (error) {
     res.status(500).send('Error getting request token');
