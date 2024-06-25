@@ -115,7 +115,13 @@ exports.callback = async (req, res) => {
     
     // 將 sessionId 和 accountId 保存到 session
     req.session.sessionId = sessionId;
-    req.session.accountId = accountId;   
+    req.session.accountId = accountId;  
+
+    // 手動保存會話數據
+    req.session.save(err => {
+      if (err) {
+        return res.status(500).send('Error saving session');
+      }
 
     console.log('callback_Session ID:', req.session.sessionId);
     console.log('callback_Session Account ID:', req.session.accountId);
