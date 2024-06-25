@@ -53,7 +53,8 @@ app.use(session({
   }),
   cookie: {
     httpOnly: true, //開啟後 前端無法通過 js操作
-    maxAge: 1000 * 60 * 60 * 24  //控制sessionID的過期時間>24小時
+    maxAge: 1000 * 60 * 60 * 24, //控制sessionID的過期時間>24小時
+    domain: 'github.io', //設置適當的域名
   },
 }))
 
