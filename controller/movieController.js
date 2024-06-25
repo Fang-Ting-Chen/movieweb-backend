@@ -128,6 +128,7 @@ exports.callback = async (req, res) => {
 
     res.redirect('https://fang-ting-chen.github.io/movieweb-frontend/');  
   } catch (error) {
+    console.error('Error creating session:', error);
     res.status(500).send('Error creating session');
   }
 }
