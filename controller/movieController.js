@@ -125,6 +125,7 @@ exports.callback = async (req, res) => {
 
     console.log('callback_Session ID:', req.session.sessionId);
     console.log('callback_Session Account ID:', req.session.accountId);
+    console.log('callback_Complete Session:', req.session);
 
     res.redirect('https://fang-ting-chen.github.io/movieweb-frontend/');  
     });
