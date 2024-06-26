@@ -9,7 +9,7 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 //導入 express-session
 const session = require('express-session');
-const MongoStore = require('connect-mongo');
+const MongoStore = require('connect-mongo')(session);
 const mongoose = require('mongoose');
 
 
