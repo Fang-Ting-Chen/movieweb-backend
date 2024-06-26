@@ -144,6 +144,7 @@ exports.logout = async(req, res) =>{
 exports.checkLogin = async (req, res) =>{
   console.log('checkLogin_Session ID:', req.session.sessionId);
   console.log('checkLogin_Session account:', req.session.accountId);
+  console.log('checkLogin_Complete Session:', req.session);
   if (req.session.sessionId && req.session.accountId) {
     res.json({ loggedIn: true });
   } else {
