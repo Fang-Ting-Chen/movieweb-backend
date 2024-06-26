@@ -9,7 +9,7 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 //導入 express-session
 const session = require('express-session');
-const MongoStore = require('connect-mongo')(session);
+const MongoStore = require('connect-mongo');
 const mongoose = require('mongoose');
 
 
@@ -33,7 +33,10 @@ app.use(
 );
 
 //連接mongodb atlas
-mongoose.connect(DB_URL)
+mongoose.connect(DB_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
   .then(() => {
     console.log('Connected to MongoDB Atlas');
   })
@@ -49,7 +52,9 @@ app.use(session({
   saveUninitialized: false, //是否為每次請求都設置一個cookie用來存儲session的id
   resave: true, //是否在每次請求時重新保存 session 
   store: MongoStore.create({
-    mongoUrl: DB_URL //數據庫連接配置
+    mongoUrl: DB_URL, //數據庫連接配置
+    collectionName: 'sessions', // 指定會話數據集合名稱
+    dbName: 'test' // 指定數據庫名稱
   }),
   cookie: {
     httpOnly: true, //開啟後 前端無法通過 js操作
