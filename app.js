@@ -12,12 +12,11 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const mongoose = require('mongoose');
 
-
 const movieRouter = require('./routes/movie');
 
-const DB_URL = process.env.atlas_URL;
+dotenv.config() //加載環境變量
 
-dotenv.config()
+const DB_URL = process.env.atlas_URL;
 
 var app = express();
 
