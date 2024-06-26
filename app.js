@@ -45,7 +45,7 @@ mongoose.connect(DB_URL)
 app.use(session({
   name: 'sid', //設置 cookie的name,默認值是: connect.sid
   secret: 'secretsecret', //參與加密的字符串(又稱簽名) 加鹽
-  saveUninitialized: false, //是否為每次請求都設置一個cookie用來存儲session的id
+  saveUninitialized: true, //是否為每次請求都設置一個cookie用來存儲session的id
   resave: false, //是否在每次請求時重新保存 session ，設置為false防止不必要的 session保存
   store: MongoStore.create({
     mongoUrl: DB_URL, //數據庫連接配置
