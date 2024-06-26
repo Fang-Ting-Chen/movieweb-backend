@@ -55,6 +55,8 @@ app.use(session({
   cookie: {
     httpOnly: true, //開啟後 前端無法通過 js操作
     maxAge: 1000 * 60 * 60 * 24, //控制sessionID的過期時間>24小時
+    sameSite: 'None', // 或 'None' 如果使用跨域请求
+    secure: process.env.NODE_ENV === 'production',// 仅在生产环境中启用 https
   },
 }))
 
