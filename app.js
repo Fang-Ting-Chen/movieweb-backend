@@ -33,10 +33,7 @@ app.use(
 );
 
 //連接mongodb atlas
-mongoose.connect(DB_URL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
+mongoose.connect(DB_URL)
   .then(() => {
     console.log('Connected to MongoDB Atlas');
   })
