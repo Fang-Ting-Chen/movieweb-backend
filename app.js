@@ -23,7 +23,7 @@ var app = express();
 //設置 cors
 app.use(
   cors({
-    origin: 'https://fang-ting-chen.github.io/movieweb-frontend',
+    origin: 'https://fang-ting-chen.github.io/movieweb-frontend/',
     methods: 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
     allowedHeaders: ['X-Requested-With', 'X-HTTP-Method-Override', 'Content-Type', 'Accept'],
     credentials: true,
