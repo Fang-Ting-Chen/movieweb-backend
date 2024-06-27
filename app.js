@@ -41,6 +41,9 @@ mongoose.connect(DB_URL)
   });
 
 
+// 設置 trust proxy，這裡的 1 代表信任一層代理 (因後端運行在一個反向代理(render)後面)
+app.set('trust proxy', 1);
+
 //設置 session 中間件
 app.use(session({
   name: 'sid', //設置 cookie的name,默認值是: connect.sid
@@ -53,10 +56,10 @@ app.use(session({
     dbName: 'test' // 指定數據庫名稱
   }),
   cookie: {
-    httpOnly: true, //開啟後 前端無法通過 js操作
+    httpOnly: true, //開啟後 前端無法通過 js操作 防止跨站腳本攻擊
     maxAge: 1000 * 60 * 60 * 24, //控制sessionID的過期時間>24小時
     sameSite: 'None', // 或 'None' 如果使用跨域请求
-    secure: process.env.NODE_ENV === 'production',// 仅在生产环境中启用 https
+    secure: true, // 僅在 HTTPS 連接中傳遞 cookie
   },
 }))
 
