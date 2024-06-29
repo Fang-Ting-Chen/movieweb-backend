@@ -1,15 +1,19 @@
-## movieBackend
+# movieBackend
+
 本專案透過後端串接TMDB API並傳送數據給前端，並使用TMDB第三方登入
 
-### Demo
+## Demo
+
 網站入口: https://fang-ting-chen.github.io/movieweb-frontend/  
 前端專案: https://github.com/Fang-Ting-Chen/movieweb-frontend
 
-### 雲端託管
+## 雲端託管
+
 MongoDB Atlas MongoDB雲端資料庫服務，儲存session  
 Render 部署API Server
 
-### 主要技術
+## 主要技術
+
 + Node.js
 + express
 + express-session
@@ -17,7 +21,8 @@ Render 部署API Server
 + cors
 + RESTful API
 
-### api
+## api
+
 | base route | routes | HTTP method | feature |
 | :--: | :--: | :--: | :--: |
 | /movie | /nowplaying/:page | get | 取得上映電影數據 |
@@ -33,5 +38,6 @@ Render 部署API Server
 | /movie | /deletewatchlist | post | (會員)刪除觀看電影列表中的電影 |
 | /movie | /ckecklogin | get | 確認登入 |
 
-### 聲明
+## 聲明
+
 本作品的圖片及內容皆為個人學習使用，無任何商業用途。
